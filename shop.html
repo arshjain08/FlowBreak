@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html>
+    <script>
+        if(localStorage.getItem("preferredBackground")==null){
+          localStorage.setItem("preferredBackground", "img2.jpg");
+          localStorage.setItem("backgroundList",'["img2.jpg"]')
+        }
+        else{
+          document.documentElement.style.background = "url(" + "Backgrounds/" + localStorage.getItem("preferredBackground") + ")" + " no-repeat center center fixed";
+          document.documentElement.style.backgroundSize = "cover";     
+        }
+      </script>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>Flow Break</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <style>
+      html {
+        background: url(Backgrounds/img2.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      #datainput {
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        display: inline-block;
+        margin: auto;
+        height: 350px; /*requires explicit height*/
+        width: 700px;
+        border-radius: 25px;
+        
+      }
+      #worktimer {
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        margin: auto;
+        height: 100px; /*requires explicit height*/
+        width: 700px;
+        border-radius: 25px;
+      }
+ 
+      #breaktimer {
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        margin: auto;
+        height : 500px;
+        width: 1000px;
+        border-radius: 25px;
+      }
+
+      .breakText {
+        text-align: center;
+        color: white;
+      }
+
+      .websiteicons {
+        height: 170;
+        width: 313.33333;
+        opacity: 0.5;
+      }
+
+      #shopdescription {
+        background-color: white;
+        border-radius: 25px;
+        height:50px;
+        width: 1000px;
+      }
+    </style>
+
+  </head>
+
+  <script type="text/javascript" src="shop.js"></script>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">FlowBreak</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="shop.html">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="guide.html">Guide</a>
+          </li>
+        </ul>
+      </div>
+
+    
+      </div>
+    </nav>
+    
+    <div id="breaktimer">
+        <h1 class="breakText">Shop</h1>
+        <h3 class="breakText" id="coins"></h3>
+        <div id="shopdescription">
+            <p style="text-align: center;">You can buy backgrounds using the coins that you have gotten from working! Every second you work gets you one coin. Click the background you want to purchase it, and you can use it whenever you want! </p>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <img
+              src="Backgrounds/img1.jpg"
+              class="w-100 shadow-1-strong rounded mb-4 websiteicons"
+              id = "img1.jpg"
+              alt=""
+              onClick = "purchaseBackground(this.id)"
+            />
+        
+            <img
+              src="Backgrounds/img2.jpg"
+              class="w-100 shadow-1-strong rounded mb-4 websiteicons"
+              id = "img2.jpg"
+              alt=""
+              onClick = "purchaseBackground(this.id)"
+            />
+
+            <img
+            src="Backgrounds/img7.jpg"
+            class="w-100 shadow-1-strong rounded mb-4 websiteicons"
+            id = "img7.jpg"
+            alt=""
+            onClick = "purchaseBackground(this.id)"
+          />
+
+          <img
+          src="Backgrounds/img8.jpg"
+          class="w-100 shadow-1-strong rounded mb-4 websiteicons"
+          id = "img8.jpg"
+          alt=""
+          onClick = "purchaseBackground(this.id)"
+        />
+          </div>
+        
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <img
+              src="Backgrounds/img3.jpg"
+              class="w-100 shadow-1-strong rounded mb-4 websiteicons"
+              id = "img3.jpg"
+              alt=""
+              onClick = "purchaseBackground(this.id)"
+            />
+        
+            <img
+              src="Backgrounds/img4.jpg"
+              class="w-100 shadow-1-strong rounded mb-4 websiteicons" 
+              id = "img4.jpg"
+              alt=""
+              onClick = "purchaseBackground(this.id)"
+            />
+
+            <img
+            src="Backgrounds/img9.jpg"
+            class="w-100 shadow-1-strong rounded mb-4 websiteicons"
+            id = "img9.jpg"
+            alt=""
+            onClick = "purchaseBackground(this.id)"
+          />
+
+          <img
+          src="Backgrounds/img10.jpg"
+          class="w-100 shadow-1-strong rounded mb-4 websiteicons"
+          id = "img10.jpg"
+          alt=""
+          onClick = "purchaseBackground(this.id)"
+        />
+            
+          </div>
+        
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <img
+              src="Backgrounds/img5.jpg"
+              class="w-100 shadow-1-strong rounded mb-4 websiteicons"
+              id = "img5.jpg"
+              alt=""
+              onClick = "purchaseBackground(this.id)"
+            />
+        
+            <img
+              src="Backgrounds/img6.jpg"
+              class="w-100 shadow-1-strong rounded mb-4 websiteicons"
+              id = "img6.jpg"
+              alt=""
+              onClick = "purchaseBackground(this.id)"
+            />
+
+            <img
+            src="Backgrounds/img11.jpg"
+            class="w-100 shadow-1-strong rounded mb-4 websiteicons"
+            id = "img11.jpg"
+            alt=""
+            onClick = "purchaseBackground(this.id)"
+          />
+
+          <img
+          src="Backgrounds/img12.jpg"
+          class="w-100 shadow-1-strong rounded mb-4 websiteicons"
+          id = "img12.jpg"
+          alt=""
+          onClick = "purchaseBackground(this.id)"
+        />
+          </div>
+        </div>
+
+      </div>
+
+      <script>
+        let backgroundList1 = JSON.parse(localStorage.getItem("backgroundList"));
+
+        for(let i=1;i<12;i++){
+          if(backgroundList1.includes("img"+i+".jpg")){
+            document.getElementById("img"+i.toString()+".jpg").style.opacity = "1";
+          }
+        }
+        if (localStorage.getItem("coins")==null){
+          localStorage.setItem("coins", 0);
+        }
+        document.getElementById("coins").innerHTML = "Coins: " + localStorage.getItem("coins");
+      </script>
+    </body>
+    
+    
+
+
+    
+
+    
+  
+    
+</html>
