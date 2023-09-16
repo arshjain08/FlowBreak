@@ -11,7 +11,7 @@ function purchaseBackground(id){
         document.documentElement.style.background = "url(" + "Backgrounds/" + localStorage.getItem("preferredBackground") + ")" + " no-repeat center center fixed";
         document.documentElement.style.backgroundSize = "cover";
     }
-    else if (localStorage.getItem("coins")>300){
+    else if (localStorage.getItem("coins")>=300){
         Swal.fire({
             title: 'Do you want to purchase this background? It will be 300 gold.',
             icon:'question',
